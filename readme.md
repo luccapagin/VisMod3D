@@ -22,7 +22,7 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 
 ### Adicionando Novos Modelos 3D ao Projeto
 
-1. Coloque todos os arquivo do modelo 3D na pasta `models` do projeto. (Adicione também a pasta `textures`, se uma veio junto com seu modelo 3D.)
+1. Coloque todos os arquivo do modelo 3D na pasta `models` do projeto. (Adicione também os arquivos à pasta `textures`, se uma veio junto com seu modelo 3D.)
 2. Atualize o caminho do modelo no arquivo `index.html`:
     
     ```html
