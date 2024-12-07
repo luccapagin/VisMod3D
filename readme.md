@@ -38,8 +38,8 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
     ```json
     "buffers": [
         {
-            "byteLength": 98400,
-            "uri": "nome_correspondente_da_scene.bin"
+            "byteLength":,
+            "uri": "nome_correspondente_da_sua_scene.bin"
         }
     ]
     ```
@@ -62,7 +62,7 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 
 ### 1. Demonstrações Interativas de Produtos
 **Caso de Uso:** Varejo de Móveis
-- **Cenário:** Um varejista de móveis cria um app de AR onde os clientes podem ver como diferentes peças de móveis ficariam em sua casa.
+- **Cenário:** Um varejista de móveis cria um app de AR onde os clientes podem ver como diferentes peças de móveis são.
 - **Benefício:** Ajuda os clientes a tomar decisões de compra informadas e reduz devoluções de produtos.
 
 ### 2. Ferramentas Educacionais
@@ -72,12 +72,12 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 
 ### 3. Provas Virtuais
 **Caso de Uso:** Varejo de Moda
-- **Cenário:** Uma loja de roupas online oferece um provador virtual onde os clientes podem ver como as roupas ficarão neles antes de comprar.
+- **Cenário:** Uma loja de roupas online oferece uma visualização onde os clientes podem ver como as roupas são antes de comprar.
 - **Benefício:** Melhora a experiência de compra online e reduz a probabilidade de devoluções.
 
 ### 4. Design e Decoração de Interiores
 **Caso de Uso:** Design de Interiores
-- **Cenário:** Um app que permite aos usuários visualizar como diferentes cores de tinta, papéis de parede ou móveis ficarão em sua casa.
+- **Cenário:** Um app que permite aos usuários visualizar como diferentes cores de tinta ou papéis de parede ficarão em sua casa.
 - **Benefício:** Ajuda os proprietários a tomar melhores decisões de design e aumenta a satisfação do cliente.
 
 ### 5. Exposições de Museus
