@@ -29,6 +29,11 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
     <a-asset-item id="product-model" src="./models/nome_do_modelo_baixado.gltf"></a-asset-item>
     
     ```
+### Acessando a Página para Visualizar o Modelo 3D
+
+1. Abra o arquivo `index.html` em um navegador web. (alternativamente, hosteie seu site em uma página GitHub Pages ou utilize a extensão Live Server do VS Code)
+2. Permita o acesso à câmera quando solicitado.
+3. Aponte a câmera para o marcador Hiro impresso ou exibido em outro dispositivo.
 
 ## Casos de Uso
 
