@@ -5,15 +5,14 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 ## Funcionalidades
 
 - Visualização de modelos 3D em AR
-- Controle de gestos para manipulação do modelo
-- Iluminação ambiente e direcional
+- Compatível com qualquer dispositivo com câmera e acesso à web
 
 ## Como Usar
 
 ### Passo a Passo para Imprimir um Hiro Marker
 
 1. Acesse https://upload.wikimedia.org/wikipedia/commons/4/48/Hiro_marker_ARjs.png
-2. Imprima o marcador em uma folha de papel.
+2. Imprima o marcador em uma folha de papel (ou abra-o em outro dispositivo, como um celular)
 
 ### Obtendo Novos Modelos 3D no Sketchfab
 
@@ -23,15 +22,13 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 
 ### Adicionando Novos Modelos 3D ao Projeto
 
-1. Coloque o arquivo do modelo 3D na pasta `models` do projeto.
+1. Coloque todos os arquivo do modelo 3D na pasta `models` do projeto. (Adicione também a pasta `textures`, se uma veio junto com seu modelo 3D.)
 2. Atualize o caminho do modelo no arquivo `index.html`:
     
-    <!-- ...código... -->
-    <a-asset-item id="product-model" src="./models/nome_do_seu_modelo.gltf"></a-asset-item>
-    <!-- ...código... -->
+    ```html
+    <a-asset-item id="product-model" src="./models/nome_do_modelo_baixado.gltf"></a-asset-item>
+    
     ```
-3. Adicione também a pasta `textures`, se uma veio junto com seu modelo 3D.
-4. Verifique se todas as texturas referenciadas no arquivo `.gltf` estão presentes na pasta `textures`. Se alguma textura estiver faltando, o modelo pode não ser carregado corretamente.
 
 ## Casos de Uso
 
@@ -87,7 +84,6 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
         scale="0.5 0.5 0.5"
         position="0 0 0"
         rotation="0 0 0"
-        gesture-handler
         look-at="[camera]"
     ></a-entity>
     ```
@@ -95,4 +91,4 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 
 ## Conclusão
 
-Este projeto demonstra como a realidade aumentada pode ser utilizada em diversas indústrias para melhorar a experiência do usuário e aumentar o engajamento. Sinta-se à vontade para explorar e adaptar o projeto para atender às suas necessidades específicas.
+Este projeto demonstra como a visualização de modelos 3D em realidade aumentada pode ser utilizada em diversas indústrias para melhorar a experiência do usuário e aumentar o engajamento. Sinta-se à vontade para explorar e adaptar o projeto para atender às suas necessidades específicas.

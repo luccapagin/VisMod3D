@@ -6,8 +6,6 @@
         <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
         <!-- Importa a biblioteca AR.js para A-Frame -->
         <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
-        <!-- Adiciona a biblioteca de controle de gestos -->
-        <script src="https://unpkg.com/aframe-gesture-component/dist/aframe-gesture-component.min.js"></script>
     </head>
     <body style="margin: 0; overflow: hidden;">
         <!-- Define a cena A-Frame com AR.js -->
@@ -19,13 +17,12 @@
             </a-assets>
             <!-- Define o marcador AR.js -->
             <a-marker preset="hiro">
-                <!-- Adiciona a entidade do modelo 3D com controle de gestos -->
+                <!-- Adiciona a entidade do modelo 3D -->
                 <a-entity
                     gltf-model="#product-model"
                     scale="0.5 0.5 0.5"
                     position="0 0 0"
                     rotation="0 0 0"
-                    gesture-handler
                     look-at="[camera]"
                 ></a-entity>
             </a-marker>
@@ -35,38 +32,38 @@
         <script>
             // Ouvinte para confirmar o carregamento da cena A-Frame
             document.querySelector('a-scene').addEventListener('loaded', () => {
-                console.log('A-Frame scene loaded');
+                console.log('Cena A-Frame carregada');
             });
             // Ouvinte para confirmar o carregamento do modelo 3D
             const modelEntity = document.querySelector('[gltf-model]');
             modelEntity.addEventListener('model-loaded', () => {
-                console.log('3D model loaded successfully');
+                console.log('Modelo 3D carregado com sucesso');
             });
             // Ouvinte para capturar erros no carregamento do modelo 3D
             modelEntity.addEventListener('model-error', (e) => {
-                console.error('Error loading 3D model:', e.detail);
+                console.error('Erro ao carregar o modelo 3D:', e.detail);
             });
             // Ouvinte para confirmar a inicialização do AR.js
             document.querySelector('a-scene').addEventListener('arjs-initialized', (event) => {
                 if (event.detail.success) {
-                    console.log('AR.js successfully initialized');
+                    console.log('AR.js inicializado com sucesso');
                 } else {
-                    console.error('AR.js initialization failed');
+                    console.error('Falha na inicialização do AR.js');
                 }
             });
             // Ouvinte para detectar o marcador Hiro
             const marker = document.querySelector('a-marker');
             marker.addEventListener('markerFound', () => {
-                console.log('Hiro marker found');
+                console.log('Marcador Hiro encontrado');
             });
             marker.addEventListener('markerLost', () => {
-                console.log('Hiro marker lost');
+                console.log('Marcador Hiro perdido');
             });
             // Ouvinte para capturar erros no carregamento das texturas
             const textures = document.querySelectorAll('a-asset-item');
             textures.forEach(texture => {
                 texture.addEventListener('error', (e) => {
-                    console.error('Error loading texture:', e.target.src);
+                    console.error('Erro ao carregar a textura:', e.target.src);
                 });
             });
         </script>
