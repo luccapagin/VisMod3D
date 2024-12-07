@@ -26,6 +26,7 @@
                     position="0 0 0"
                     rotation="0 0 0"
                     gesture-handler
+                    look-at="[camera]"
                 ></a-entity>
             </a-marker>
             <!-- Adiciona fontes de luz à cena -->
@@ -47,6 +48,29 @@
             // Ouvinte para capturar erros no carregamento do modelo 3D
             modelEntity.addEventListener('model-error', (e) => {
                 console.error('Error loading 3D model:', e.detail);
+            });
+            // Ouvinte para confirmar a inicialização do AR.js
+            document.querySelector('a-scene').addEventListener('arjs-initialized', (event) => {
+                if (event.detail.success) {
+                    console.log('AR.js successfully initialized');
+                } else {
+                    console.error('AR.js initialization failed');
+                }
+            });
+            // Ouvinte para detectar o marcador Hiro
+            const marker = document.querySelector('a-marker');
+            marker.addEventListener('markerFound', () => {
+                console.log('Hiro marker found');
+            });
+            marker.addEventListener('markerLost', () => {
+                console.log('Hiro marker lost');
+            });
+            // Ouvinte para capturar erros no carregamento das texturas
+            const textures = document.querySelectorAll('a-asset-item');
+            textures.forEach(texture => {
+                texture.addEventListener('error', (e) => {
+                    console.error('Error loading texture:', e.target.src);
+                });
             });
         </script>
     </body>

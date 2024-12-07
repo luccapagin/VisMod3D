@@ -31,6 +31,7 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
     <!-- ...código... -->
     ```
 3. Adicione também a pasta `textures`, se uma veio junto com seu modelo 3D.
+4. Verifique se todas as texturas referenciadas no arquivo `.gltf` estão presentes na pasta `textures`. Se alguma textura estiver faltando, o modelo pode não ser carregado corretamente.
 
 ## Casos de Uso
 
@@ -62,7 +63,6 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 ### 6. Jogos
 **Caso de Uso:** Jogos de Aventura
 - **Cenário:** Um jogo de AR onde os jogadores caçam tesouros virtuais escondidos em locais do mundo real.
-- **Benefício:** Combina atividade física com jogos para uma experiência mais imersiva.
 
 ### 7. Treinamento Médico
 **Caso de Uso:** Treinamento Cirúrgico
@@ -73,6 +73,25 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
 **Caso de Uso:** Reparo Automotivo
 - **Cenário:** Um app que sobrepõe instruções 3D no motor de um carro para guiar os técnicos em tarefas complexas de reparo.
 - **Benefício:** Melhora a precisão e a eficiência no trabalho de reparo.
+
+## Solução de Problemas
+
+### O modelo 3D não aparece ao apresentar o Hiro Marker
+
+1. Verifique se o marcador Hiro está bem iluminado e visível para a câmera.
+2. Certifique-se de que o caminho do modelo 3D no arquivo `index.html` está correto.
+3. Adicione o componente `look-at` à entidade do modelo 3D para garantir que ele esteja sempre voltado para a câmera:
+    ```html
+    <a-entity
+        gltf-model="#product-model"
+        scale="0.5 0.5 0.5"
+        position="0 0 0"
+        rotation="0 0 0"
+        gesture-handler
+        look-at="[camera]"
+    ></a-entity>
+    ```
+4. Verifique o console do navegador para mensagens de erro que possam ajudar a identificar o problema.
 
 ## Conclusão
 
