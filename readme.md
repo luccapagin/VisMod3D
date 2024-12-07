@@ -29,6 +29,29 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
     <a-asset-item id="product-model" src="./models/nome_do_modelo_baixado.gltf"></a-asset-item>
     
     ```
+
+### Atualizando o Caminho do Buffer no Arquivo .gltf
+
+1. Abra o projeto no VS Code.
+2. Navegue até a pasta `models` e abra o arquivo `.gltf` do modelo que você adicionou.
+3. Encontre a seção `"buffers"` e atualize o valor da propriedade `"uri"` para o nome correto do arquivo `.bin` correspondente ao modelo.
+    ```json
+    "buffers": [
+        {
+            "byteLength": 98400,
+            "uri": "nome_correspondente_da_scene.bin"
+        }
+    ]
+    ```
+4. Salve o arquivo e recarregue a página no navegador para visualizar as mudanças.
+
+### Alterando o Modelo 3D em Tempo Real
+
+1. Adicione os arquivos dos novos modelos 3D na pasta `models` do projeto.
+2. Atualize a lista de modelos no arquivo `index.html` com os novos modelos.
+3. Abra o arquivo `index.html` em um navegador web.
+4. Selecione o modelo desejado na lista para visualizá-lo em AR.
+
 ### Acessando a Página para Visualizar o Modelo 3D
 
 1. Abra o arquivo `index.html` em um navegador web. (alternativamente, hosteie seu site em uma página GitHub Pages ou utilize a extensão Live Server do VS Code)
@@ -93,6 +116,22 @@ Este projeto utiliza AR.js e A-Frame para visualizar modelos 3D em realidade aum
     ></a-entity>
     ```
 4. Verifique o console do navegador para mensagens de erro que possam ajudar a identificar o problema.
+
+## Diferenças de Implementação
+
+Este projeto foi adaptado a partir de uma implementação de referência, feito pelo próprio time do AR.js, que utiliza AR.js e A-Frame para visualização de modelos 3D em realidade aumentada. As principais diferenças e adaptações feitas no projeto incluem:
+
+1. **Carregamento de Modelos 3D**:
+   - Na implementação de referência, o modelo 3D é carregado diretamente de uma URL externa usando um proxy CORS. Neste projeto, os modelos 3D são armazenados localmente na pasta `models` e referenciados no arquivo `index.html`.
+
+2. **Configuração do AR.js**:
+   - A implementação de referência inclui uma configuração básica do AR.js sem parâmetros adicionais. Este projeto inclui configurações adicionais, como ouvintes de eventos para confirmar o carregamento da cena, do modelo 3D e a inicialização do AR.js.
+
+3. **Uso de Marcadores**:
+   - Ambos os projetos utilizam o marcador Hiro para a visualização de modelos 3D. No entanto, este projeto inclui uma configuração adicional para garantir que o modelo 3D esteja sempre voltado para a câmera usando o componente `look-at`.
+
+4. **Solução de Problemas**:
+   - Este projeto inclui uma seção detalhada de solução de problemas no arquivo `readme.md`, fornecendo orientações sobre como resolver problemas comuns que podem ocorrer durante o uso do projeto.
 
 ## Conclusão
 
