@@ -130,7 +130,10 @@ Este projeto foi adaptado a partir de uma implementação de referência, feito 
 3. **Uso de Marcadores**:
    - Ambos os projetos utilizam o marcador Hiro para a visualização de modelos 3D. No entanto, este projeto inclui uma configuração adicional para garantir que o modelo 3D esteja sempre voltado para a câmera usando o componente `look-at`.
 
-4. **Solução de Problemas**:
+4. **Alternância entre Modelos 3D**:
+   - Este projeto permite a alternância entre diferentes modelos 3D em tempo real através de uma lista de seleção no arquivo `index.html`. Isso permite que os usuários escolham e visualizem diferentes modelos 3D sem precisar recarregar a página.
+
+5. **Solução de Problemas**:
    - Este projeto inclui uma seção detalhada de solução de problemas no arquivo `readme.md`, fornecendo orientações sobre como resolver problemas comuns que podem ocorrer durante o uso do projeto.
 
 ## Conclusão
